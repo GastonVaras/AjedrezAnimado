@@ -1,0 +1,353 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.gwendolyn-bold {
+  font-family: "Gwendolyn", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  background-color: rgb(46, 33, 21);
+  background-image: url("/images/table-background.png");
+}
+
+h2 {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 20px;
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: repeat(8, 12.5%);
+  gap: 0;
+  height: 800px;
+  width: 800px;
+  margin: auto;
+  margin-top: 10px;
+  border-top: outset 1px black;
+  border-right: outset 2px black;
+  border-left: outset 15px rgb(57, 57, 57);
+  border-bottom: outset 15px rgb(54, 54, 54);
+  border-radius: 10px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 20px;
+  box-shadow: -5px 5px 5px black, -2px -2px 1px black;
+}
+
+#animation-screen {
+  width: 400px;
+  height: 400px;
+  background-color: transparent;
+  margin: 200px 40%;
+  position: absolute;
+  visibility: hidden;
+  filter: drop-shadow(5px 5px 30px red);
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.beige {
+  background-image: radial-gradient(circle, rgb(165, 165, 165), rgb(235, 235, 172));
+}
+
+.brown {
+  background-image: radial-gradient(circle, rgb(110, 80, 39), rgb(38, 22, 3));
+}
+
+#info {
+  height: 80px;
+  width: 600px;
+  background-color: rgb(183, 183, 183);
+  border: 1px solid black;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 15px;
+  box-shadow: -4px 4px 3px black;
+}
+
+.target {
+  border: solid 10px rgb(93, 40, 13);
+  box-sizing: border-box;
+}
+
+.chess-piece {
+  height: 95%;
+  width: 95%;
+  filter: drop-shadow(5px 5px 2px black);
+}
+
+.caja {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-right: 10px;
+  height: 750px;
+  background-image: radial-gradient(circle, rgb(74, 47, 27), rgb(81, 52, 23));
+  border-left: outset 20px black;
+  border: 3px solid black;
+  border-radius: 20px;
+  justify-content: center;
+  box-shadow: -10px 10px 5px black;
+}
+.caja h2 {
+  color: rgb(255, 205, 159);
+  text-shadow: 2px 2px 10px rgb(0, 0, 0), 2px 2px 10px rgb(0, 0, 0), 2px 2px 10px rgb(255, 255, 255);
+  font-family: gwendolyn;
+  font-size: 52px;
+}
+
+#caja {
+  margin-top: 5px;
+  padding: 10px;
+  padding-top: 60px;
+  border: inset 20px black;
+  border-left: inset 10px black;
+  border-bottom: inset 10px black;
+  box-shadow: 2px 2px black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 480px;
+  height: 600px;
+  background-image: radial-gradient(circle, rgb(25, 73, 19), rgb(14, 56, 0));
+  align-content: flex-start;
+  overflow: auto;
+}
+
+.caja .chess-piece {
+  width: 80px;
+  height: 80px;
+  margin: 2px;
+}
+
+#historial {
+  border: 1px solid #000;
+  height: 800px;
+  overflow: auto;
+  width: 95%;
+  background-color: #8a7963;
+  padding: 15px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: -4px 4px 3px black;
+}
+
+.botonera {
+  display: flex;
+  flex-direction: row;
+}
+.botonera button {
+  width: 150px;
+  height: 60px;
+  background-color: rgb(70, 49, 25);
+  border: solid 1px black;
+  border-radius: 20px;
+  box-shadow: -4px 4px 3px black;
+  margin: 30px;
+  color: rgb(255, 205, 159);
+}
+
+#jaque,
+#mate {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(70, 49, 25);
+  border: solid 1px black;
+  border-radius: 20px;
+  box-shadow: -4px 4px 3px black;
+  margin: 30px;
+  color: rgb(255, 205, 159);
+}
+
+#jaque {
+  position: absolute;
+  left: 435px;
+  top: 270px;
+}
+
+#mate {
+  position: absolute;
+  left: 435px;
+  top: 374px;
+}
+
+/* Tooltip CSS */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.highlight {
+  background-color: rgb(171, 93, 57);
+  background-image: none;
+}
+
+@keyframes flashRed {
+  0% {
+    background-color: rgba(255, 0, 0, 0.15);
+    border-radius: 50%;
+    transform: translate(-5px, -5px);
+  }
+  50% {
+    filter: drop-shadow(5px 5px 10px rgb(255, 0, 0));
+    background-color: rgba(255, 0, 0, 0.359);
+    height: 105%;
+    width: 105%;
+    transform: translate(2px, 2px);
+    border-radius: 50%;
+  }
+  100% {
+    filter: drop-shadow(5px 5px 2px black);
+    height: 95%;
+    width: 95%;
+    transform: translate(-5px, -5px);
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.15);
+  }
+}
+.flash-red {
+  animation: flashRed 5s infinite ease-in-out;
+}
+
+@keyframes flashButton {
+  0% {
+    background-color: rgba(255, 0, 0, 0.15);
+    transform: scale(0.9);
+  }
+  50% {
+    filter: drop-shadow(5px 5px 10px rgb(255, 0, 0));
+    background-color: rgba(255, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(5px 5px 2px black);
+    transform: scale(0.9);
+    background-color: rgba(255, 0, 0, 0.15);
+  }
+}
+.flash-button {
+  animation: flashButton 5s infinite ease-in-out;
+}
+
+@keyframes flashDead {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    filter: drop-shadow(5px 5px 10px rgb(255, 0, 0));
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.flash-dead {
+  animation: flashDead 3s ease-out forwards;
+  animation-iteration-count: 1;
+}/*# sourceMappingURL=sass.css.map */

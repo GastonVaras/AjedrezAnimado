@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Breve descripcion de la pagina">
+  <meta name="keywords" content="keyword1, keyword2, etc">
+  <link rel="stylesheet" href="./style/sass.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap" rel="stylesheet">
+  <title>Ajedrez - presentado por Ender Studios</title>
+</head>
+
+<body>
+
+  <!-- Columna 1, 20% -->
+  <div id="historial">
+    <h2>Historial de movimientos</h2>
+  </div>
+  <!-- Columna 2, 60% -->
+  <div>
+    <div class="gameboard" id="gameboard"></div>
+    <p id="info">Color Blanco mueve primero</p>
+  </div>
+  <div id="animation-screen"></div>
+  <div>
+    <div class="caja">
+      <h2>Piezas capturadas</h2>
+      <div id="caja">
+      </div>
+    </div>
+    <div class="botonera">
+      <button id="saveGame">Guardar Partida</button>
+      <button id="loadGame">Cargar Partida</button>
+    </div>
+
+        
+      <button id="jaque">Jaque</button>
+      <button id="mate">Mate</button>
+    
+
+  </div>
+  <script src="./javascript/index.js"></script>
+</body>
+
+</html>
